@@ -1,35 +1,9 @@
-#include "functions1.h"
+#include "ArchiveFunctions.h"
 #include <iostream>
 using namespace std;
 
- /*
-void ConvertNcheck(string word)        //funkcja sprawdzajaca czy wprowadzony numer akt jest liczbą- wymaga poprawy
-{
-
-
-    char ch[word.length()+1];
-
-    strcpy(ch, word.c_str());
-
-
-    for(int i=0; i<word.length(); i++)
-    {
-        if(isdigit(ch[i]))
-        {
-            //cout<<"Wszystko git";
-
-        }
-        else {
-            cout<<"Blad. Zly format danych."<<endl;
-           // cin.ignore();
-            NewCase();
-
-        }
-        break;
-    }
-
-}
-*/
+vector <Case_Data> caseBox;
+Case_Data docum;
 
 
 void NewCase()
@@ -40,7 +14,7 @@ void NewCase()
     cin.ignore();
     cout<<"Podaj numer akt sprawy: ";
     getline(cin, docum.CaseFilesNum);
-    //ConvertNcheck(docum.CaseFilesNum);    wymaga poprawy
+
 
     cout<<"Podaj typ sprawy: ";
     getline(cin, docum.Type);
@@ -380,6 +354,120 @@ void FileLoad()
     cout<<"Odczyt dokonany pomyslnie";
     Sleep(2500);
     system("cls");
+
+}
+
+void Menu()
+{
+
+    int wybor;
+    while(true)
+    {
+         cout<<"--------ARCHIWUM KREYMINALNE - MENU GLOWNE---------"<<endl;
+    cout<<"1. Dodaj nowe akta."<<endl;
+    cout<<"2. Usun akta."<<endl;
+    cout<<"3. Zmien dane akt."<<endl;
+    cout<<"4. Wyszukaj akta po numerze."<<endl;
+    cout<<"5. Wyszukaj akta po typie."<<endl;
+    cout<<"6. Zapisz baze danych w pliku."<<endl;
+    cout<<"7. Wczytaj zapisana baze danych z pliku."<<endl;
+    cout<<"8. Wyszukaj podejrzanego."<<endl;
+    cout<<"9. Wyjscie"<<endl<<endl;
+
+    cout<<"Wybor: ";
+    cin>>wybor;
+
+
+
+        switch(wybor)
+        {
+
+         case 1:
+            {
+                system("cls");
+
+                NewCase();
+
+
+            }
+            break;
+
+            case 2:
+            {
+               system("cls");
+
+               DeleteCase();
+            }
+            break;
+
+            case 3:
+            {
+                system("cls");
+                EditCase();
+            }
+            break;
+
+            case 4:
+            {
+                system("cls");
+                DisplayNr();
+            }
+            break;
+
+            case 5:
+            {
+                system("cls");
+                DisplayType();
+            }
+            break;
+
+            case 6:
+            {
+                system("cls");
+                FileSave();
+            }
+            break;
+
+            case 7:
+            {
+                system("cls");
+                FileLoad();
+            }
+            break;
+
+            case 8:
+            {
+                system("cls");
+                NameSearch();
+            }
+            break;
+
+            case 9:
+            {
+                string dots="...";
+                int counter=0;
+
+                cout<<"Wychodzenie z programu";
+
+                    for(int i=0;i<3;i++)
+                    {
+                        cout<<dots[i];
+                        Sleep(1000);
+                    }
+                   exit(0);
+            }
+            break;
+
+            default:
+            {
+                cout<<"Wybrano niepoprawna opcje!";
+                Sleep(3000);
+                system("cls");
+            }
+            break;
+        }
+
+    }
 
 }
 

@@ -1,9 +1,0 @@
-Numer akt: 34
-Typ sprawy: morderstwo
-Data wszczecia sprawy: 23-04-1999
-Data zamkniecia sprawy: w trakcie
-Oficer prowadzacy: sierz. Kowalski, Jan
-Oskarzony: Jakub T.
-Ofiara: Joanna H.
-Swiadek: brak
----------------------------

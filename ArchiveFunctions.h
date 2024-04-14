@@ -1,5 +1,5 @@
-#ifndef PROJEKT_KRZYSIEK_FUNCTIONS1_H
-#define PROJEKT_KRZYSIEK_FUNCTIONS1_H
+#ifndef ARCHIVE_FUNCTIONS_H
+#define ARCHIVE_FUNCTIONS_H
 
 #include <iostream>
 #include <windows.h>
@@ -15,11 +15,9 @@ using namespace std;
 struct Case_Data{
 
     string Type, caseOpen, caseClosed, officerName, accusedName, victimName, witnessName, CaseFilesNum;
+
 };
 
-vector <Case_Data> caseBox;
-Case_Data docum;
-//vector <akta>::iterator it;
 
 void NewCase();
 
@@ -35,10 +33,10 @@ void DisplayType();
 
 void FileSave();
 
+void FileLoad();
+
 void NameSearch();
 
-//void ConvertNcheck();     wymaga poprawy
+void Menu();
 
-
-
-#endif // PROJEKT_KRZYSIEK_FUNCTIONS1_H
+#endif // ARCHIVE_FUNCTIONS_H
